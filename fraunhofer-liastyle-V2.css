@@ -16,7 +16,7 @@
 --------------------------------------------------------- */
 
 :root {
-  --fh-bg: #f1f1f1;
+  --fh-bg: #ffffff;
   --fh-surface: #ffffff;
   --fh-soft: #f7f7f7;
   --fh-soft-green: rgba(0, 121, 107, 0.07);
@@ -201,25 +201,23 @@ hr {
 .lia-toc-search input {
   font-size: 1.02rem !important;
   line-height: 1.3 !important;
-  padding: 0.55rem 0.75rem !important;
   border: 1px solid var(--fh-line) !important;
   border-radius: 0 !important;
 }
 
-/* Navigationseinträge */
+/* Navigationseinträge - Überarbeitet: Buttons/Burger-Menü explizit ausgeschlossen */
 .lia-toc,
-.lia-toc * {
+.lia-toc *:not(.icon):not(i):not([class*="icon"]):not(button):not(#lia-btn-toc) {
   font-family: var(--fh-font) !important;
 }
 
 .lia-toc a,
 .lia-toc li,
-.lia-toc span,
-.lia-toc button,
+.lia-toc span:not(.icon),
 .lia-toc .lia-toc__item,
 .lia-toc .lia-toc__link {
-  font-size: 1.05rem !important;
-  line-height: 1.35 !important;
+  font-size: 1.15rem !important; /* Hier Größe für die Listeneinträge verkleinert */
+  line-height: 1.4 !important;
   font-weight: 600 !important;
 }
 
@@ -263,112 +261,10 @@ hr {
    7. Topbar / Icons oben rechts zurückhaltender
 --------------------------------------------------------- */
 
+
 /* Allgemeine Toolbar */
-.lia-toolbar,
-.lia-header,
-.lia-topbar,
-.lia-menu {
-  background: var(--fh-bg) !important;
-  color: var(--fh-text) !important;
-  box-shadow: none !important;
-}
 
-/* Buttons/Iconflächen wieder in V1-Größe */
-button,
-.lia-toolbar button,
-.lia-header button,
-.lia-topbar button,
-.lia-menu button,
-.lia-btn,
-button.lia-btn {
-  background: var(--fh-green) !important;
-  color: #ffffff !important;
-  border: none !important;
-  border-radius: 0 !important;
-  font-family: var(--fh-font) !important;
-  font-weight: 700 !important;
-  box-shadow: none !important;
-  min-width: 3.8rem !important;
-  min-height: 3.8rem !important;
-  padding: 0.8rem 1rem !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  font-size: 1.45rem !important;
-}
 
-/* Hover wie in V1 dunkler grün */
-button:hover,
-.lia-toolbar button:hover,
-.lia-header button:hover,
-.lia-topbar button:hover,
-.lia-menu button:hover,
-.lia-btn:hover,
-button.lia-btn:hover {
-  background: var(--fh-green-dark) !important;
-  color: #ffffff !important;
-}
-
-/* Aktive Buttons ebenfalls wie V1 mit voller grüner Fläche */
-.lia-toolbar button.active,
-.lia-toolbar button[aria-pressed="true"],
-.lia-header button.active,
-.lia-header button[aria-pressed="true"],
-.lia-topbar button.active,
-.lia-topbar button[aria-pressed="true"] {
-  background: var(--fh-green) !important;
-  color: #ffffff !important;
-  border: none !important;
-}
-
-/* Icons selbst */
-.lia-toolbar svg,
-.lia-header svg,
-.lia-topbar svg,
-.lia-menu svg,
-button svg,
-.lia-btn svg {
-  color: currentColor !important;
-  fill: currentColor !important;
-  stroke: currentColor !important;
-  width: 1.75rem !important;
-  height: 1.75rem !important;
-}
-
-button i,
-button .material-icons,
-button .icon,
-.lia-btn i,
-.lia-btn .material-icons,
-.lia-btn .icon,
-.lia-btn__icon,
-.icon.lia-btn__icon {
-  font-size: 2rem !important;
-  width: 2rem !important;
-  height: 2rem !important;
-  line-height: 1 !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-}
-
-.lia-btn__icon::before,
-.icon.lia-btn__icon::before {
-  font-size: 2rem !important;
-  line-height: 1 !important;
-}
-
-/* Sprachbutton / DE-Button in V1-Größe */
-button[aria-label*="language"],
-button[title*="language"],
-button[aria-label*="Language"],
-button[title*="Language"] {
-  background: var(--fh-green) !important;
-  color: #ffffff !important;
-  border: none !important;
-  font-size: 1.45rem !important;
-  font-weight: 800 !important;
-}
 
 
 /* ---------------------------------------------------------
@@ -436,18 +332,6 @@ button[title*="Language"] {
   display: none !important;
 }
 
-.fh-accordion summary::before {
-  content: "→" !important;
-  display: inline-block !important;
-  width: 2.4rem !important;
-  min-width: 2.4rem !important;
-  font-weight: 400 !important;
-  color: var(--fh-text) !important;
-}
-
-.fh-accordion[open] summary::before {
-  content: "↓" !important;
-}
 
 .fh-accordion .fh-accordion-content {
   padding-left: 3.2rem !important;
@@ -719,7 +603,7 @@ input,
 textarea,
 select,
 .lia-input {
-  background: #ffffff !important;
+  /*background: #ffffff !important;*/
   color: var(--fh-text) !important;
   border: 2px solid var(--fh-line) !important;
   border-radius: 0 !important;
