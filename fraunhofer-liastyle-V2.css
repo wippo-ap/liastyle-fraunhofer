@@ -1,0 +1,866 @@
+/* =========================================================
+   Fraunhofer-inspiriertes LiaScript Custom CSS
+   Datei: fraunhofer-liastyle.css
+
+   Version: 0.3
+   Anpassungen:
+   - kleinere Navigation links
+   - zurückhaltendere Top-Icons
+   - Akkordeons im reduzierten Fraunhofer-Stil
+   - klickbare Kacheln / Modul-Cards für H1-Seiten
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   1. Grundvariablen
+--------------------------------------------------------- */
+
+:root {
+  --fh-bg: #f1f1f1;
+  --fh-surface: #ffffff;
+  --fh-soft: #f7f7f7;
+  --fh-soft-green: rgba(0, 121, 107, 0.07);
+
+  --fh-text: #000000;
+  --fh-muted: #444444;
+  --fh-line: #8a8a8a;
+  --fh-line-soft: #d6d6d6;
+
+  --fh-green: #179c7d;
+  --fh-green-dark: #00715f;
+  --fh-green-soft: rgba(23, 156, 125, 0.08);
+
+  --fh-font: Arial, Helvetica, sans-serif;
+  --fh-code-font: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+
+  --fh-radius: 0;
+}
+
+
+/* ---------------------------------------------------------
+   2. Grundlayout LiaScript
+--------------------------------------------------------- */
+
+html,
+body {
+  background: var(--fh-bg) !important;
+  color: var(--fh-text) !important;
+  font-family: var(--fh-font) !important;
+}
+
+.lia-slide,
+.lia-view,
+.lia-main,
+.lia-markdown,
+main,
+section {
+  background: var(--fh-bg) !important;
+  color: var(--fh-text) !important;
+  font-family: var(--fh-font) !important;
+}
+
+.lia-slide {
+  padding: 3.2rem 4rem !important;
+}
+
+.lia-slide__content,
+.lia-slide-content,
+.lia-markdown {
+  max-width: 1180px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+
+/* ---------------------------------------------------------
+   3. Überschriften
+--------------------------------------------------------- */
+
+h1,
+.lia-h1 {
+  font-family: var(--fh-font) !important;
+  font-size: clamp(2.6rem, 5vw, 4.6rem) !important;
+  line-height: 1.05 !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.035em !important;
+  color: var(--fh-text) !important;
+  margin-top: 0 !important;
+  margin-bottom: 2rem !important;
+}
+
+/* kurzer schwarzer Balken unter H1 */
+h1::after,
+.lia-h1::after {
+  content: "" !important;
+  display: block !important;
+  width: 96px !important;
+  height: 7px !important;
+  background: var(--fh-text) !important;
+  margin-top: 1.4rem !important;
+}
+
+h2,
+.lia-h2 {
+  font-family: var(--fh-font) !important;
+  font-size: clamp(1.9rem, 3vw, 2.8rem) !important;
+  line-height: 1.15 !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.025em !important;
+  color: var(--fh-text) !important;
+  margin-top: 2.6rem !important;
+  margin-bottom: 1.3rem !important;
+}
+
+h3,
+.lia-h3 {
+  font-family: var(--fh-font) !important;
+  font-size: clamp(1.35rem, 2vw, 1.75rem) !important;
+  line-height: 1.25 !important;
+  font-weight: 750 !important;
+  color: var(--fh-text) !important;
+  margin-top: 2rem !important;
+  margin-bottom: 1rem !important;
+}
+
+h4,
+h5,
+h6 {
+  font-family: var(--fh-font) !important;
+  color: var(--fh-text) !important;
+  font-weight: 700 !important;
+}
+
+
+/* ---------------------------------------------------------
+   4. Fließtext, Listen, Links
+--------------------------------------------------------- */
+
+p,
+li,
+.lia-p,
+.lia-list {
+  font-family: var(--fh-font) !important;
+  font-size: clamp(1.05rem, 1.45vw, 1.35rem) !important;
+  line-height: 1.45 !important;
+  color: var(--fh-text) !important;
+}
+
+p {
+  margin-top: 0 !important;
+  margin-bottom: 1.15rem !important;
+}
+
+ul,
+ol {
+  margin-top: 0.6rem !important;
+  margin-bottom: 1.6rem !important;
+  padding-left: 1.5rem !important;
+}
+
+li {
+  margin-bottom: 0.35rem !important;
+}
+
+li::marker {
+  color: var(--fh-green) !important;
+}
+
+a,
+.lia-link {
+  color: var(--fh-green-dark) !important;
+  text-decoration: underline !important;
+  text-decoration-thickness: 0.08em !important;
+  text-underline-offset: 0.18em !important;
+}
+
+a:hover,
+.lia-link:hover {
+  color: var(--fh-green) !important;
+}
+
+
+/* ---------------------------------------------------------
+   5. Trennlinien
+--------------------------------------------------------- */
+
+hr {
+  border: none !important;
+  border-top: 1px solid var(--fh-line) !important;
+  margin: 3rem 0 2rem 0 !important;
+}
+
+
+/* ---------------------------------------------------------
+   6. Linke Navigation / Inhaltsverzeichnis kleiner machen
+--------------------------------------------------------- */
+
+/* Suchfeld links */
+.lia-toc input,
+.lia-toc input[type="search"],
+.lia-toc .lia-search,
+.lia-toc-search input {
+  font-size: 1.02rem !important;
+  line-height: 1.3 !important;
+  padding: 0.55rem 0.75rem !important;
+  border: 1px solid var(--fh-line) !important;
+  border-radius: 0 !important;
+}
+
+/* Navigationseinträge */
+.lia-toc,
+.lia-toc * {
+  font-family: var(--fh-font) !important;
+}
+
+.lia-toc a,
+.lia-toc li,
+.lia-toc span,
+.lia-toc button,
+.lia-toc .lia-toc__item,
+.lia-toc .lia-toc__link {
+  font-size: 1.05rem !important;
+  line-height: 1.35 !important;
+  font-weight: 600 !important;
+}
+
+/* H1-Einträge in der Navigation */
+.lia-toc a[href],
+.lia-toc .lia-toc__link {
+  color: var(--fh-green-dark) !important;
+  text-decoration: none !important;
+}
+
+/* Hover etwas zurückhaltender */
+.lia-toc a:hover,
+.lia-toc .lia-toc__link:hover {
+  color: var(--fh-green) !important;
+  text-decoration: underline !important;
+}
+
+/* Einrückungen in der Navigation etwas kompakter */
+.lia-toc ul,
+.lia-toc ol {
+  padding-left: 0.8rem !important;
+  margin-top: 0.25rem !important;
+  margin-bottom: 0.25rem !important;
+}
+
+.lia-toc li {
+  margin-bottom: 0.28rem !important;
+  padding-top: 0.15rem !important;
+  padding-bottom: 0.15rem !important;
+}
+
+/* Trennlinien in der Navigation dezenter */
+.lia-toc hr,
+.lia-toc .lia-separator {
+  border-top: 1px solid #e3e3e3 !important;
+  margin: 0.45rem 0 !important;
+}
+
+
+/* ---------------------------------------------------------
+   7. Topbar / Icons oben rechts zurückhaltender
+--------------------------------------------------------- */
+
+/* Allgemeine Toolbar */
+.lia-toolbar,
+.lia-header,
+.lia-topbar,
+.lia-menu {
+  background: var(--fh-bg) !important;
+  color: var(--fh-text) !important;
+  box-shadow: none !important;
+}
+
+/* Buttons/Iconflächen wieder in V1-Größe */
+button,
+.lia-toolbar button,
+.lia-header button,
+.lia-topbar button,
+.lia-menu button,
+.lia-btn,
+button.lia-btn {
+  background: var(--fh-green) !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 0 !important;
+  font-family: var(--fh-font) !important;
+  font-weight: 700 !important;
+  box-shadow: none !important;
+  min-width: 3.8rem !important;
+  min-height: 3.8rem !important;
+  padding: 0.8rem 1rem !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 1.45rem !important;
+}
+
+/* Hover wie in V1 dunkler grün */
+button:hover,
+.lia-toolbar button:hover,
+.lia-header button:hover,
+.lia-topbar button:hover,
+.lia-menu button:hover,
+.lia-btn:hover,
+button.lia-btn:hover {
+  background: var(--fh-green-dark) !important;
+  color: #ffffff !important;
+}
+
+/* Aktive Buttons ebenfalls wie V1 mit voller grüner Fläche */
+.lia-toolbar button.active,
+.lia-toolbar button[aria-pressed="true"],
+.lia-header button.active,
+.lia-header button[aria-pressed="true"],
+.lia-topbar button.active,
+.lia-topbar button[aria-pressed="true"] {
+  background: var(--fh-green) !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+/* Icons selbst */
+.lia-toolbar svg,
+.lia-header svg,
+.lia-topbar svg,
+.lia-menu svg,
+button svg,
+.lia-btn svg {
+  color: currentColor !important;
+  fill: currentColor !important;
+  stroke: currentColor !important;
+  width: 1.75rem !important;
+  height: 1.75rem !important;
+}
+
+button i,
+button .material-icons,
+button .icon,
+.lia-btn i,
+.lia-btn .material-icons,
+.lia-btn .icon,
+.lia-btn__icon,
+.icon.lia-btn__icon {
+  font-size: 2rem !important;
+  width: 2rem !important;
+  height: 2rem !important;
+  line-height: 1 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.lia-btn__icon::before,
+.icon.lia-btn__icon::before {
+  font-size: 2rem !important;
+  line-height: 1 !important;
+}
+
+/* Sprachbutton / DE-Button in V1-Größe */
+button[aria-label*="language"],
+button[title*="language"],
+button[aria-label*="Language"],
+button[title*="Language"] {
+  background: var(--fh-green) !important;
+  color: #ffffff !important;
+  border: none !important;
+  font-size: 1.45rem !important;
+  font-weight: 800 !important;
+}
+
+
+/* ---------------------------------------------------------
+   8. Bottom Navigation / Foliennavigation
+--------------------------------------------------------- */
+
+.lia-footer,
+.lia-slide-footer,
+.lia-progress,
+.lia-slide__nav {
+  background: var(--fh-green-dark) !important;
+  color: #ffffff !important;
+}
+
+.lia-footer button,
+.lia-slide-footer button,
+.lia-slide__nav button {
+  background: transparent !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+
+/* ---------------------------------------------------------
+   9. Fraunhofer-Akkordeon
+   Verwendung:
+
+   <details class="fh-accordion">
+   <summary>Weiterbildungsangebot</summary>
+
+   <div class="fh-accordion-content">
+
+   Dein Inhalt.
+
+   </div>
+   </details>
+--------------------------------------------------------- */
+
+.fh-accordion {
+  background: transparent !important;
+  border-radius: 0 !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-bottom: none !important;
+  border-top: 1px solid var(--fh-line) !important;
+  box-shadow: none !important;
+  margin: 2rem 0 0 0 !important;
+  padding: 1.4rem 0 !important;
+  color: var(--fh-text) !important;
+}
+
+.fh-accordion summary {
+  cursor: pointer !important;
+  list-style: none !important;
+  font-family: var(--fh-font) !important;
+  font-size: clamp(1.65rem, 2.4vw, 2.5rem) !important;
+  line-height: 1.15 !important;
+  font-weight: 800 !important;
+  color: var(--fh-text) !important;
+  display: flex !important;
+  align-items: baseline !important;
+}
+
+.fh-accordion summary::-webkit-details-marker {
+  display: none !important;
+}
+
+.fh-accordion summary::before {
+  content: "→" !important;
+  display: inline-block !important;
+  width: 2.4rem !important;
+  min-width: 2.4rem !important;
+  font-weight: 400 !important;
+  color: var(--fh-text) !important;
+}
+
+.fh-accordion[open] summary::before {
+  content: "↓" !important;
+}
+
+.fh-accordion .fh-accordion-content {
+  padding-left: 3.2rem !important;
+  padding-top: 1.2rem !important;
+}
+
+.fh-accordion .fh-accordion-content p,
+.fh-accordion .fh-accordion-content li {
+  font-size: clamp(1rem, 1.4vw, 1.25rem) !important;
+}
+
+.fh-accordion:last-of-type {
+  border-bottom: 1px solid var(--fh-line) !important;
+}
+
+
+/* ---------------------------------------------------------
+   10. Klickbare Kacheln / Modul-Cards
+   Verwendung im LiaScript:
+
+   <div class="fh-card-grid">
+     <a class="fh-tile" href="#1">
+       <img src="bild.jpg" alt="">
+       <span class="fh-tile-label">Woche 1</span>
+       <strong>Einführung in ML</strong>
+       <span class="fh-tile-text">Kurzbeschreibung</span>
+     </a>
+   </div>
+--------------------------------------------------------- */
+
+.fh-card-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)) !important;
+  gap: 1.2rem !important;
+  margin: 2rem 0 2.4rem 0 !important;
+}
+
+.fh-tile {
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 260px !important;
+  background: var(--fh-surface) !important;
+  border: 1px solid var(--fh-line-soft) !important;
+  color: var(--fh-text) !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+  transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease !important;
+  overflow: hidden !important;
+}
+
+.fh-tile:hover {
+  transform: translateY(-3px) !important;
+  border-color: var(--fh-green) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10) !important;
+  color: var(--fh-text) !important;
+  text-decoration: none !important;
+}
+
+.fh-tile img {
+  width: 100% !important;
+  height: 135px !important;
+  object-fit: cover !important;
+  display: block !important;
+  background: var(--fh-soft) !important;
+}
+
+.fh-tile-content {
+  padding: 1rem 1.1rem 1.15rem 1.1rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 1 !important;
+}
+
+.fh-tile-label {
+  display: inline-block !important;
+  align-self: flex-start !important;
+  font-size: 0.78rem !important;
+  line-height: 1.2 !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+  color: var(--fh-green-dark) !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.fh-tile strong {
+  display: block !important;
+  font-size: 1.18rem !important;
+  line-height: 1.25 !important;
+  font-weight: 800 !important;
+  color: var(--fh-text) !important;
+  margin-bottom: 0.55rem !important;
+}
+
+.fh-tile-text {
+  display: block !important;
+  font-size: 0.96rem !important;
+  line-height: 1.38 !important;
+  color: var(--fh-muted) !important;
+  margin-top: auto !important;
+}
+
+.fh-tile::after {
+  content: "Mehr erfahren →" !important;
+  display: block !important;
+  padding: 0 1.1rem 1.05rem 1.1rem !important;
+  font-size: 0.92rem !important;
+  font-weight: 700 !important;
+  color: var(--fh-green-dark) !important;
+}
+
+
+/* Variante ohne Bild */
+.fh-tile.fh-tile-no-image {
+  min-height: 190px !important;
+}
+
+.fh-tile.fh-tile-no-image .fh-tile-content {
+  padding-top: 1.25rem !important;
+}
+
+
+/* ---------------------------------------------------------
+   11. Fraunhofer-Infoboxen
+--------------------------------------------------------- */
+
+.fh-box {
+  background: var(--fh-surface) !important;
+  border-left: 8px solid var(--fh-green) !important;
+  padding: 1.2rem 1.5rem !important;
+  margin: 1.8rem 0 !important;
+  color: var(--fh-text) !important;
+  box-shadow: none !important;
+}
+
+.fh-box p:last-child {
+  margin-bottom: 0 !important;
+}
+
+.fh-box-soft {
+  background: var(--fh-green-soft) !important;
+  border-left: 8px solid var(--fh-green) !important;
+  padding: 1.2rem 1.5rem !important;
+  margin: 1.8rem 0 !important;
+  color: var(--fh-text) !important;
+}
+
+.fh-note {
+  background: var(--fh-surface) !important;
+  border: 1px solid var(--fh-line) !important;
+  padding: 1rem 1.25rem !important;
+  margin: 1.5rem 0 !important;
+}
+
+
+/* ---------------------------------------------------------
+   12. Zitate
+--------------------------------------------------------- */
+
+blockquote,
+.lia-quote {
+  background: var(--fh-surface) !important;
+  border-left: 8px solid var(--fh-green) !important;
+  color: var(--fh-text) !important;
+  padding: 1.2rem 1.5rem !important;
+  margin: 2rem 0 !important;
+  box-shadow: none !important;
+}
+
+blockquote p,
+.lia-quote p {
+  color: var(--fh-text) !important;
+}
+
+
+/* ---------------------------------------------------------
+   13. Tabellen
+--------------------------------------------------------- */
+
+table {
+  border-collapse: collapse !important;
+  width: 100% !important;
+  background: var(--fh-surface) !important;
+  margin: 2rem 0 !important;
+  color: var(--fh-text) !important;
+}
+
+th,
+td {
+  border: 1px solid var(--fh-line) !important;
+  padding: 0.75rem 0.9rem !important;
+  text-align: left !important;
+  vertical-align: top !important;
+}
+
+th {
+  background: var(--fh-green) !important;
+  color: #ffffff !important;
+  font-weight: 750 !important;
+}
+
+td {
+  background: var(--fh-surface) !important;
+  color: var(--fh-text) !important;
+}
+
+
+/* ---------------------------------------------------------
+   14. Code-Blöcke
+--------------------------------------------------------- */
+
+pre,
+code,
+.lia-code {
+  font-family: var(--fh-code-font) !important;
+}
+
+pre {
+  background: #202020 !important;
+  color: #f5f5f5 !important;
+  border-radius: 0 !important;
+  padding: 1.2rem !important;
+  overflow-x: auto !important;
+  box-shadow: none !important;
+}
+
+code {
+  background: rgba(0, 0, 0, 0.08) !important;
+  color: var(--fh-text) !important;
+  padding: 0.1rem 0.25rem !important;
+  border-radius: 0 !important;
+}
+
+pre code {
+  background: transparent !important;
+  color: inherit !important;
+  padding: 0 !important;
+}
+
+
+/* ---------------------------------------------------------
+   15. Normale Inhalts-Buttons
+--------------------------------------------------------- */
+
+.fh-button {
+  display: inline-block !important;
+  background: var(--fh-green) !important;
+  color: #ffffff !important;
+  border: 1px solid var(--fh-green) !important;
+  border-radius: 0 !important;
+  font-family: var(--fh-font) !important;
+  font-weight: 700 !important;
+  padding: 0.7rem 1rem !important;
+  text-decoration: none !important;
+}
+
+.fh-button:hover {
+  background: var(--fh-green-dark) !important;
+  border-color: var(--fh-green-dark) !important;
+  color: #ffffff !important;
+}
+
+
+/* ---------------------------------------------------------
+   16. Eingaben, Quiz
+--------------------------------------------------------- */
+
+input,
+textarea,
+select,
+.lia-input {
+  background: #ffffff !important;
+  color: var(--fh-text) !important;
+  border: 2px solid var(--fh-line) !important;
+  border-radius: 0 !important;
+  font-family: var(--fh-font) !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+.lia-input:focus {
+  border-color: var(--fh-green) !important;
+  outline: none !important;
+}
+
+.lia-quiz {
+  border: 2px solid var(--fh-green) !important;
+  background: var(--fh-surface) !important;
+  color: var(--fh-text) !important;
+  padding: 1.2rem !important;
+  box-shadow: none !important;
+}
+
+
+/* ---------------------------------------------------------
+   17. Optional: Hero-Bereich
+--------------------------------------------------------- */
+
+.fh-hero {
+  background: var(--fh-bg) !important;
+  color: var(--fh-text) !important;
+  padding: 1rem 0 2rem 0 !important;
+}
+
+.fh-hero h1 {
+  font-size: clamp(3rem, 5.5vw, 5rem) !important;
+  font-weight: 800 !important;
+}
+
+
+/* ---------------------------------------------------------
+   18. Optional: einfache Inhaltskarte
+--------------------------------------------------------- */
+
+.fh-card {
+  background: var(--fh-surface) !important;
+  border: 1px solid var(--fh-line-soft) !important;
+  padding: 1.4rem 1.6rem !important;
+  margin: 1.5rem 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+.fh-card h1,
+.fh-card h2,
+.fh-card h3 {
+  margin-top: 0 !important;
+}
+
+.fh-card h1::after {
+  display: none !important;
+}
+
+
+/* ---------------------------------------------------------
+   19. Responsives Verhalten
+--------------------------------------------------------- */
+
+@media screen and (max-width: 1024px) {
+  .lia-slide {
+    padding: 2.6rem 2.4rem !important;
+  }
+
+  .fh-card-grid {
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)) !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .lia-slide {
+    padding: 2rem 1.4rem !important;
+  }
+
+  h1,
+  .lia-h1 {
+    font-size: 2.35rem !important;
+  }
+
+  h2,
+  .lia-h2 {
+    font-size: 1.75rem !important;
+  }
+
+  p,
+  li,
+  .lia-p,
+  .lia-markdown {
+    font-size: 1.02rem !important;
+  }
+
+  .fh-accordion summary {
+    font-size: 1.45rem !important;
+  }
+
+  .fh-accordion .fh-accordion-content {
+    padding-left: 0 !important;
+  }
+
+  .fh-accordion summary::before {
+    width: 2rem !important;
+    min-width: 2rem !important;
+  }
+
+  .fh-card-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .fh-tile {
+    min-height: auto !important;
+  }
+
+  .fh-tile img {
+    height: 155px !important;
+  }
+
+  .lia-toc a,
+  .lia-toc li,
+  .lia-toc span,
+  .lia-toc button,
+  .lia-toc .lia-toc__item,
+  .lia-toc .lia-toc__link {
+    font-size: 0.98rem !important;
+  }
+}
+
+
+/* ---------------------------------------------------------
+   20. Debug-Hilfe
+   Zum Testen einkommentieren:
+
+   .fh-accordion,
+   .fh-tile {
+     outline: 6px solid red !important;
+   }
+--------------------------------------------------------- */

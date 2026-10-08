@@ -1,0 +1,554 @@
+/* =========================================================
+   Fraunhofer-inspiriertes LiaScript Custom CSS
+   Datei: fraunhofer-liastyle.css
+
+   Ziel:
+   - hellgrauer Seitenhintergrund
+   - klare schwarze Typografie
+   - reduziertes Fraunhofer-artiges Layout
+   - Akkordeons über <details class="fh-accordion">
+   - Boxen, Tabellen, Code und Buttons einheitlich gestaltet
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   1. Grundvariablen
+--------------------------------------------------------- */
+
+:root {
+  --fh-bg: #f1f1f1;
+  --fh-surface: #ffffff;
+  --fh-soft: #f7f7f7;
+  --fh-text: #000000;
+  --fh-muted: #444444;
+  --fh-line: #8a8a8a;
+  --fh-green: #179c7d;
+  --fh-green-dark: #00715f;
+  --fh-green-soft: rgba(23, 156, 125, 0.08);
+
+  --fh-font: Arial, Helvetica, sans-serif;
+  --fh-code-font: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+
+/* ---------------------------------------------------------
+   2. Grundlayout LiaScript
+--------------------------------------------------------- */
+
+html,
+body {
+  background: var(--fh-bg) !important;
+  color: var(--fh-text) !important;
+  font-family: var(--fh-font) !important;
+}
+
+.lia-slide,
+.lia-view,
+.lia-main,
+.lia-markdown,
+main,
+section {
+  background: var(--fh-bg) !important;
+  color: var(--fh-text) !important;
+  font-family: var(--fh-font) !important;
+}
+
+/* Inhalt etwas großzügiger setzen */
+.lia-slide {
+  padding: 3.5rem 4rem !important;
+}
+
+/* Lesebreite */
+.lia-slide__content,
+.lia-slide-content,
+.lia-markdown {
+  max-width: 1180px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+
+/* ---------------------------------------------------------
+   3. Überschriften
+--------------------------------------------------------- */
+
+h1,
+.lia-h1 {
+  font-family: var(--fh-font) !important;
+  font-size: clamp(2.6rem, 5vw, 4.8rem) !important;
+  line-height: 1.05 !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.035em !important;
+  color: var(--fh-text) !important;
+  margin-top: 0 !important;
+  margin-bottom: 2rem !important;
+}
+
+/* kurzer schwarzer Balken unter H1 */
+h1::after,
+.lia-h1::after {
+  content: "" !important;
+  display: block !important;
+  width: 96px !important;
+  height: 7px !important;
+  background: var(--fh-text) !important;
+  margin-top: 1.4rem !important;
+}
+
+h2,
+.lia-h2 {
+  font-family: var(--fh-font) !important;
+  font-size: clamp(1.9rem, 3vw, 3rem) !important;
+  line-height: 1.15 !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.025em !important;
+  color: var(--fh-text) !important;
+  margin-top: 2.6rem !important;
+  margin-bottom: 1.3rem !important;
+}
+
+h3,
+.lia-h3 {
+  font-family: var(--fh-font) !important;
+  font-size: clamp(1.45rem, 2vw, 1.9rem) !important;
+  line-height: 1.25 !important;
+  font-weight: 750 !important;
+  color: var(--fh-text) !important;
+  margin-top: 2rem !important;
+  margin-bottom: 1rem !important;
+}
+
+h4,
+h5,
+h6 {
+  font-family: var(--fh-font) !important;
+  color: var(--fh-text) !important;
+  font-weight: 700 !important;
+}
+
+
+/* ---------------------------------------------------------
+   4. Fließtext, Listen, Links
+--------------------------------------------------------- */
+
+p,
+li,
+.lia-p,
+.lia-list {
+  font-family: var(--fh-font) !important;
+  font-size: clamp(1.15rem, 1.6vw, 1.5rem) !important;
+  line-height: 1.45 !important;
+  color: var(--fh-text) !important;
+}
+
+p {
+  margin-top: 0 !important;
+  margin-bottom: 1.25rem !important;
+}
+
+ul,
+ol {
+  margin-top: 0.6rem !important;
+  margin-bottom: 1.6rem !important;
+  padding-left: 1.5rem !important;
+}
+
+li {
+  margin-bottom: 0.35rem !important;
+}
+
+li::marker {
+  color: var(--fh-green) !important;
+}
+
+a,
+.lia-link {
+  color: var(--fh-green-dark) !important;
+  text-decoration: underline !important;
+  text-decoration-thickness: 0.08em !important;
+  text-underline-offset: 0.18em !important;
+}
+
+a:hover,
+.lia-link:hover {
+  color: var(--fh-green) !important;
+}
+
+
+/* ---------------------------------------------------------
+   5. Trennlinien
+--------------------------------------------------------- */
+
+hr {
+  border: none !important;
+  border-top: 1px solid var(--fh-line) !important;
+  margin: 3rem 0 2rem 0 !important;
+}
+
+
+/* ---------------------------------------------------------
+   6. Fraunhofer-Akkordeon
+   Verwendung im LiaScript:
+
+   <details class="fh-accordion">
+   <summary>Weiterbildungsangebot</summary>
+
+   <div class="fh-accordion-content">
+
+   Dein Inhalt.
+
+   </div>
+   </details>
+--------------------------------------------------------- */
+
+.fh-accordion {
+  background: transparent !important;
+  border-radius: 0 !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-bottom: none !important;
+  border-top: 1px solid var(--fh-line) !important;
+  box-shadow: none !important;
+  margin: 2rem 0 0 0 !important;
+  padding: 1.4rem 0 !important;
+  color: var(--fh-text) !important;
+}
+
+.fh-accordion summary {
+  cursor: pointer !important;
+  list-style: none !important;
+  font-family: var(--fh-font) !important;
+  font-size: clamp(1.7rem, 2.5vw, 2.7rem) !important;
+  line-height: 1.15 !important;
+  font-weight: 800 !important;
+  color: var(--fh-text) !important;
+  display: flex !important;
+  align-items: baseline !important;
+}
+
+.fh-accordion summary::-webkit-details-marker {
+  display: none !important;
+}
+
+.fh-accordion summary::before {
+  content: "→" !important;
+  display: inline-block !important;
+  width: 2.4rem !important;
+  min-width: 2.4rem !important;
+  font-weight: 400 !important;
+  color: var(--fh-text) !important;
+}
+
+.fh-accordion[open] summary::before {
+  content: "↓" !important;
+}
+
+.fh-accordion .fh-accordion-content {
+  padding-left: 3.2rem !important;
+  padding-top: 1.2rem !important;
+}
+
+.fh-accordion .fh-accordion-content p,
+.fh-accordion .fh-accordion-content li {
+  font-size: clamp(1.1rem, 1.5vw, 1.35rem) !important;
+}
+
+.fh-accordion:last-of-type {
+  border-bottom: 1px solid var(--fh-line) !important;
+}
+
+
+/* ---------------------------------------------------------
+   7. Fraunhofer-Infoboxen
+   Verwendung:
+
+   <div class="fh-box">
+   Inhalt
+   </div>
+--------------------------------------------------------- */
+
+.fh-box {
+  background: var(--fh-surface) !important;
+  border-left: 8px solid var(--fh-green) !important;
+  padding: 1.2rem 1.5rem !important;
+  margin: 1.8rem 0 !important;
+  color: var(--fh-text) !important;
+  box-shadow: none !important;
+}
+
+.fh-box p:last-child {
+  margin-bottom: 0 !important;
+}
+
+.fh-box-soft {
+  background: var(--fh-green-soft) !important;
+  border-left: 8px solid var(--fh-green) !important;
+  padding: 1.2rem 1.5rem !important;
+  margin: 1.8rem 0 !important;
+  color: var(--fh-text) !important;
+}
+
+.fh-note {
+  background: var(--fh-surface) !important;
+  border: 1px solid var(--fh-line) !important;
+  padding: 1rem 1.25rem !important;
+  margin: 1.5rem 0 !important;
+}
+
+
+/* ---------------------------------------------------------
+   8. Zitate
+--------------------------------------------------------- */
+
+blockquote,
+.lia-quote {
+  background: var(--fh-surface) !important;
+  border-left: 8px solid var(--fh-green) !important;
+  color: var(--fh-text) !important;
+  padding: 1.2rem 1.5rem !important;
+  margin: 2rem 0 !important;
+  box-shadow: none !important;
+}
+
+blockquote p,
+.lia-quote p {
+  color: var(--fh-text) !important;
+}
+
+
+/* ---------------------------------------------------------
+   9. Tabellen
+--------------------------------------------------------- */
+
+table {
+  border-collapse: collapse !important;
+  width: 100% !important;
+  background: var(--fh-surface) !important;
+  margin: 2rem 0 !important;
+  color: var(--fh-text) !important;
+}
+
+th,
+td {
+  border: 1px solid var(--fh-line) !important;
+  padding: 0.75rem 0.9rem !important;
+  text-align: left !important;
+  vertical-align: top !important;
+}
+
+th {
+  background: var(--fh-green) !important;
+  color: #ffffff !important;
+  font-weight: 750 !important;
+}
+
+td {
+  background: var(--fh-surface) !important;
+  color: var(--fh-text) !important;
+}
+
+
+/* ---------------------------------------------------------
+   10. Code-Blöcke
+--------------------------------------------------------- */
+
+pre,
+code,
+.lia-code {
+  font-family: var(--fh-code-font) !important;
+}
+
+pre {
+  background: #202020 !important;
+  color: #f5f5f5 !important;
+  border-radius: 0 !important;
+  padding: 1.2rem !important;
+  overflow-x: auto !important;
+  box-shadow: none !important;
+}
+
+code {
+  background: rgba(0, 0, 0, 0.08) !important;
+  color: var(--fh-text) !important;
+  padding: 0.1rem 0.25rem !important;
+  border-radius: 0 !important;
+}
+
+pre code {
+  background: transparent !important;
+  color: inherit !important;
+  padding: 0 !important;
+}
+
+
+/* ---------------------------------------------------------
+   11. Buttons, Eingaben, Quiz
+--------------------------------------------------------- */
+
+button,
+.lia-btn,
+button.lia-btn {
+  background: var(--fh-green) !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 0 !important;
+  font-family: var(--fh-font) !important;
+  font-weight: 700 !important;
+  padding: 0.7rem 1rem !important;
+  box-shadow: none !important;
+}
+
+button:hover,
+.lia-btn:hover,
+button.lia-btn:hover {
+  background: var(--fh-green-dark) !important;
+  color: #ffffff !important;
+}
+
+input,
+textarea,
+select,
+.lia-input {
+  background: #ffffff !important;
+  color: var(--fh-text) !important;
+  border: 2px solid var(--fh-line) !important;
+  border-radius: 0 !important;
+  font-family: var(--fh-font) !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+.lia-input:focus {
+  border-color: var(--fh-green) !important;
+  outline: none !important;
+}
+
+.lia-quiz {
+  border: 2px solid var(--fh-green) !important;
+  background: var(--fh-surface) !important;
+  color: var(--fh-text) !important;
+  padding: 1.2rem !important;
+  box-shadow: none !important;
+}
+
+
+/* ---------------------------------------------------------
+   12. Optional: Hero-Bereich
+   Verwendung:
+
+   <div class="fh-hero">
+   # Titel
+   Text
+   </div>
+--------------------------------------------------------- */
+
+.fh-hero {
+  background: var(--fh-bg) !important;
+  color: var(--fh-text) !important;
+  padding: 1rem 0 2rem 0 !important;
+}
+
+.fh-hero h1 {
+  font-size: clamp(3rem, 5.5vw, 5rem) !important;
+  font-weight: 800 !important;
+}
+
+
+/* ---------------------------------------------------------
+   13. Optional: Karten
+   Verwendung:
+
+   <div class="fh-card">
+   ### Titel
+   Inhalt
+   </div>
+--------------------------------------------------------- */
+
+.fh-card {
+  background: var(--fh-surface) !important;
+  border: 1px solid #d9d9d9 !important;
+  padding: 1.4rem 1.6rem !important;
+  margin: 1.5rem 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+.fh-card h1,
+.fh-card h2,
+.fh-card h3 {
+  margin-top: 0 !important;
+}
+
+.fh-card h1::after {
+  display: none !important;
+}
+
+
+/* ---------------------------------------------------------
+   14. LiaScript Navigation / Header vorsichtig anpassen
+--------------------------------------------------------- */
+
+.lia-toolbar,
+.lia-header {
+  background: var(--fh-bg) !important;
+  color: var(--fh-text) !important;
+  box-shadow: none !important;
+}
+
+.lia-toolbar button,
+.lia-header button {
+  color: var(--fh-text) !important;
+}
+
+
+/* ---------------------------------------------------------
+   15. Responsives Verhalten
+--------------------------------------------------------- */
+
+@media screen and (max-width: 768px) {
+  .lia-slide {
+    padding: 2rem 1.4rem !important;
+  }
+
+  h1,
+  .lia-h1 {
+    font-size: 2.4rem !important;
+  }
+
+  h2,
+  .lia-h2 {
+    font-size: 1.8rem !important;
+  }
+
+  p,
+  li,
+  .lia-p,
+  .lia-markdown {
+    font-size: 1.05rem !important;
+  }
+
+  .fh-accordion summary {
+    font-size: 1.5rem !important;
+  }
+
+  .fh-accordion .fh-accordion-content {
+    padding-left: 0 !important;
+  }
+
+  .fh-accordion summary::before {
+    width: 2rem !important;
+    min-width: 2rem !important;
+  }
+}
+
+
+/* ---------------------------------------------------------
+   16. Debug-Hilfe
+   Bei Bedarf einkommentieren, um zu prüfen,
+   ob die Datei geladen wird.
+
+   .fh-accordion {
+     outline: 6px solid red !important;
+   }
+--------------------------------------------------------- */
