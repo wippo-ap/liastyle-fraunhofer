@@ -274,14 +274,16 @@ hr {
 .lia-footer,
 .lia-slide-footer,
 .lia-progress,
-.lia-slide__nav {
-  background: var(--fh-green-dark) !important;
+.lia-slide__nav,
+.lia-pagination__content {
+  background: var(--fh-green) !important;
   color: #ffffff !important;
 }
 
 .lia-footer button,
 .lia-slide-footer button,
-.lia-slide__nav button {
+.lia-slide__nav button,
+.lia-pagination__content button {
   background: transparent !important;
   color: #ffffff !important;
   border: none !important;
@@ -598,6 +600,12 @@ pre code {
 /* ---------------------------------------------------------
    16. Eingaben, Quiz
 --------------------------------------------------------- */
+
+/* Fragen in Markdown: <!-- class="fh-question" --> vor den Absatz setzen. */
+.fh-question {
+  margin-top: 3rem !important;
+  font-weight: 700 !important;
+}
 
 input,
 textarea,
