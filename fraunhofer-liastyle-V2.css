@@ -756,3 +756,10 @@ select:focus,
      outline: 6px solid red !important;
    }
 --------------------------------------------------------- */
+
+/* LiaScript kann mehrere direkt aufeinanderfolgende HTML-Elemente
+   in einen Absatz-Wrapper einschließen. Für Card-Grids soll dieser
+   Wrapper kein eigenes Layout-Element sein. */
+.fh-card-grid > p.lia-paragraph:has(> .fh-tile) {
+  display: contents !important;
+}
