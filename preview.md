@@ -8,6 +8,8 @@ link: ./fraunhofer-liastyle-V2.css
 
 Dieser Testkurs lädt **fraunhofer-liastyle-V2.css direkt aus deinem lokalen Projekt**. Bearbeite das CSS und speichere die Datei, um die Änderungen in der Vorschau zu sehen.
 
+**Verwendete Klasse: `fh-box`** — Weiße Infobox mit grünem Balken links, zum Beispiel für Lernziele oder wichtige Inhalte.
+
 <div class="fh-box">
 
 **Prüfe deine Änderungen**
@@ -16,6 +18,8 @@ Gehe die Abschnitte über die LiaScript-Navigation durch. Prüfe auch Hover, Tas
 
 </div>
 
+**Verwendete Klasse: `fh-note`** — Weißer Hinweis mit dünnem grauem Rahmen, zum Beispiel für Voraussetzungen.
+
 <div class="fh-note">
 
 Für einen Vergleich mit V1 ändere oben im Metadatenkommentar die Zeile `link:` auf `./fraunhofer-liastyle-V1.css`.
@@ -23,6 +27,8 @@ Für einen Vergleich mit V1 ändere oben im Metadatenkommentar die Zeile `link:`
 </div>
 
 ## Typografie
+
+**Automatische Gestaltung ohne eigene `fh-`-Klasse:** Überschriften, Absätze, Listen, Links, Zitate, Tabellen und Code erhalten ihr Aussehen durch die allgemeinen CSS-Regeln. LiaScript-Klassen wie `lia-h1`, `lia-p`, `lia-list`, `lia-link`, `lia-quote` und `lia-code` werden ebenfalls berücksichtigt; du musst sie hier nicht selbst setzen.
 
 Ein normaler Absatz mit **fetter Schrift**, *kursiver Schrift*, einem [Link zur LiaScript-Dokumentation](https://liascript.github.io/) und `Inline-Code`. Dieser etwas längere Text hilft dabei, Zeilenhöhe, Zeilenlänge und Abstände im tatsächlichen Kurslayout einzuschätzen.
 
@@ -67,6 +73,8 @@ Ein kurzer Absatz unter einer Zwischenüberschrift.
 
 ## Boxen und Karten
 
+**Verwendete Klasse: `fh-box`** — Weiße Infobox mit grünem Balken links, zum Beispiel für Lernziele oder wichtige Inhalte.
+
 <div class="fh-box">
 
 **Lernziel**
@@ -78,17 +86,23 @@ Nach diesem Modul kannst du die wichtigsten Begriffe erklären.
 
 </div>
 
+**Verwendete Klasse: `fh-box-soft`** — Infobox mit zartgrünem Hintergrund und grünem Balken links, hier für einen Tipp.
+
 <div class="fh-box-soft">
 
 **Tipp:** Notiere deine Beobachtungen, bevor du die Musterlösung öffnest.
 
 </div>
 
+**Verwendete Klasse: `fh-note`** — Weißer Hinweis mit dünnem grauem Rahmen, zum Beispiel für Voraussetzungen.
+
 <div class="fh-note">
 
 **Voraussetzung:** Für die Übung benötigst du nur deinen Browser.
 
 </div>
+
+**Verwendete Klasse: `fh-card`** — Inhaltskarte mit hellem Rahmen und Innenabstand. Die Überschrift beginnt ohne zusätzlichen oberen Abstand.
 
 <div class="fh-card">
 
@@ -102,9 +116,13 @@ Beschreibe einen Prozess aus deinem Arbeitsalltag in drei Schritten.
 
 </div>
 
+**Verwendete Klasse: `fh-button`** — Ein Link als grüner Button mit weißer Schrift; beim Darüberfahren wird er dunkler. Das Linkziel steht in `href`.
+
 <a class="fh-button" href="#Interaktion">Zur Übung</a>
 
 ## Akkordeons
+
+**Verwendete Klassen:** `fh-accordion` gestaltet das aufklappbare `<details>`-Element mit Trennlinien und kräftigem Titel im `<summary>`. `fh-accordion-content` gibt dem Inhalt Abstand und rückt ihn auf breiten Bildschirmen ein. Beim zweiten Beispiel sorgt das HTML-Attribut `open` dafür, dass es anfangs geöffnet ist; dafür ist keine zusätzliche CSS-Klasse nötig.
 
 <details class="fh-accordion">
 
@@ -134,6 +152,15 @@ Prüfe den Abstand zum Titel, die Schriftgröße und die Trennlinien. Klappe bei
 </details>
 
 ## Kacheln
+
+**Verwendete Klassen:**
+
+- `fh-card-grid`: ordnet die Kacheln in einem anpassungsfähigen Raster an; auf schmalen Bildschirmen stehen sie untereinander.
+- `fh-tile`: macht den gesamten Link zur Kachel mit Rahmen, Hover-Effekt und automatisch ergänztem Text „Mehr erfahren →“.
+- `fh-tile-no-image`: ergänzt `fh-tile` bei Modul 2 und 3 für die kompaktere Variante ohne Bild.
+- `fh-tile-content`: umschließt die Texte und setzt deren Innenabstände.
+- `fh-tile-label`: gestaltet die kleine grüne Modulbezeichnung in Großbuchstaben.
+- `fh-tile-text`: gestaltet die Kurzbeschreibung. Der Titel im `<strong>` und das `<img>` erhalten ihr Aussehen innerhalb von `fh-tile` automatisch.
 
 <div class="fh-card-grid">
 
@@ -166,6 +193,8 @@ Prüfe den Abstand zum Titel, die Schriftgröße und die Trennlinien. Klappe bei
 
 ## Hero
 
+**Verwendete Klassen:** `fh-hero` gestaltet den Einstiegsbereich mit Abständen und besonders großer `<h1>`-Überschrift. `fh-button` gestaltet darin den Link „Jetzt ausprobieren“ als grünen Button. Der schwarze Balken unter dem Titel kommt aus der allgemeinen H1-Regel.
+
 <div class="fh-hero">
 
 <h1>Wissen in die Praxis übertragen</h1>
@@ -177,6 +206,8 @@ Entdecke die Grundlagen und erprobe sie an einer konkreten Aufgabe.
 </div>
 
 ## Interaktion
+
+**Verwendete Klasse: `fh-question`** — Macht den Fragetext fett und gibt ihm oben Abstand. Sie wird mit dem LiaScript-Kommentar `<!-- class="fh-question" -->` direkt vor dem Frageabsatz zugewiesen. Die Quizfunktion entsteht durch die LiaScript-Quizsyntax; Eingabefelder und die von LiaScript verwendeten Klassen `lia-input` und `lia-quiz` werden durch allgemeine CSS-Regeln gestaltet.
 
 Hier werden echte LiaScript-Quizze verwendet. Prüfe die Eingabefelder, Auswahlzustände, Buttons und Rückmeldungen mit richtigen und falschen Antworten.
 
@@ -200,6 +231,10 @@ Ergänze den Namen der Sprache: Lia____
 [[Script]]
 
 ## Lange Inhalte
+
+**Gestaltung in diesem Abschnitt:** `fh-box` hebt den langen Einleitungstext hervor. Tabelle und Codeblock verwenden die allgemeinen Regeln für `table`, `pre` und `code`, ohne zusätzliche Klassen.
+
+**Verwendete Klasse: `fh-box`** — Weiße Infobox mit grünem Balken links, zum Beispiel für Lernziele oder wichtige Inhalte.
 
 <div class="fh-box">
 
