@@ -61,7 +61,7 @@ Der relative CSS-Pfad setzt voraus, dass Kursdatei und Stylesheet im selben Ordn
 | Eine Kachel kurz beschreiben | `fh-tile-text`: kleinerer Beschreibungstext in dunklem Grau, nach unten ausgerichtet. | „Ergänze in jeder Kachel einen Satz als `fh-tile-text`. “ |
 | Einen Link als Handlungsaufforderung zeigen | `fh-button`: grüner Button mit weißer Schrift, dunkler beim Hover. | „Füge einen Link ‚Zur Übung‘ mit `fh-button` und meinem Linkziel ein.“ |
 | Eine Quizfrage optisch hervorheben | `fh-question`: fette Schrift und größerer Abstand oberhalb des Frageabsatzes. | „Setze direkt vor jeden Frageabsatz den Kommentar `<!-- class="fh-question" -->`. “ |
-| Eine große Einstiegsfläche gestalten | `fh-hero`: Einstiegsbereich mit Abständen und besonders großer H1. | „Erstelle einen `fh-hero` mit H1, kurzem Einleitungstext und einem Link mit `fh-button`. “ |
+| Eine große Einstiegsfläche gestalten | `fh-hero`: Einstiegsbereich mit H1, H2 oder H3 in Markdown-Größe und Strich darunter. | „Erstelle einen `fh-hero` mit H1, kurzem Einleitungstext und einem Link mit `fh-button`. “ |
 
 Die Klassen gestalten die Darstellung. Das Aufklappen kommt vom HTML-Element `<details>`, das Linkziel aus `href` und die Auswertung eines Quiz aus LiaScript. `fh-card` ist eine Inhaltskarte; für eine vollständig verlinkte Kachel verwende `fh-tile`.
 
@@ -128,6 +128,22 @@ Der Kacheltitel erhält sein Aussehen über `<strong>` innerhalb von `fh-tile`; 
 <h1>Wissen in die Praxis übertragen</h1>
 <p>Erarbeite die Grundlagen und probiere sie selbst aus.</p>
 <a class="fh-button" href="LINKZIEL_ZUR_UEBUNG">Jetzt ausprobieren</a>
+</div>
+```
+
+**Weitere Hero-Vorlagen:** H1 entspricht der normalen Markdown-H1. H2 und H3 sind kleiner; alle drei haben einen schwarzen Strich darunter.
+
+```html
+<div class="fh-hero">
+<h2>Formulierungsübung</h2>
+<p>Formuliere eine passende Antwort.</p>
+</div>
+```
+
+```html
+<div class="fh-hero">
+<h3>Einzelne Formulierungen verbessern</h3>
+<p>Überarbeite die folgenden Beispiele.</p>
 </div>
 ```
 

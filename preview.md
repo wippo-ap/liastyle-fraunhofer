@@ -193,7 +193,7 @@ Prüfe den Abstand zum Titel, die Schriftgröße und die Trennlinien. Klappe bei
 
 ## Hero
 
-**Verwendete Klassen:** `fh-hero` gestaltet den Einstiegsbereich mit Abständen und besonders großer `<h1>`-Überschrift. `fh-button` gestaltet darin den Link „Jetzt ausprobieren“ als grünen Button. Der schwarze Balken unter dem Titel kommt aus der allgemeinen H1-Regel.
+**Verwendete Klassen:** `fh-hero` gestaltet den Einstiegsbereich mit Abständen und einer H1-, H2- oder H3-Überschrift in der jeweiligen Markdown-Größe. H1, H2 und H3 werden stufenweise kleiner und haben alle einen schwarzen Strich darunter. `fh-button` gestaltet darin den Link „Jetzt ausprobieren“ als grünen Button.
 
 <div class="fh-hero">
 
@@ -202,6 +202,22 @@ Prüfe den Abstand zum Titel, die Schriftgröße und die Trennlinien. Klappe bei
 Entdecke die Grundlagen und erprobe sie an einer konkreten Aufgabe.
 
 <a class="fh-button" href="#Interaktion">Jetzt ausprobieren</a>
+
+</div>
+
+<div class="fh-hero">
+
+<h2>Formulierungsübung</h2>
+
+Formuliere eine passende Antwort.
+
+</div>
+
+<div class="fh-hero">
+
+<h3>Einzelne Formulierungen verbessern</h3>
+
+Überarbeite die folgenden Beispiele.
 
 </div>
 

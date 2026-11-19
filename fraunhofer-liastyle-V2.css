@@ -88,9 +88,13 @@ h1,
   margin-bottom: 2rem !important;
 }
 
-/* kurzer schwarzer Balken unter H1 */
+/* Kurzer schwarzer Balken unter H1 sowie Hero-H2 und Hero-H3. */
 h1::after,
-.lia-h1::after {
+.lia-h1::after,
+.fh-hero h2::after,
+.fh-hero .lia-h2::after,
+.fh-hero h3::after,
+.fh-hero .lia-h3::after {
   content: "" !important;
   display: block !important;
   width: 96px !important;
@@ -645,9 +649,15 @@ select:focus,
   padding: 1rem 0 2rem 0 !important;
 }
 
-.fh-hero h1 {
-  font-size: clamp(3rem, 5.5vw, 5rem) !important;
-  font-weight: 800 !important;
+/* Schriftgrößen kommen aus den allgemeinen Überschriften-Regeln
+   einschließlich ihrer responsiven Anpassungen (H1 > H2 > H3). */
+.fh-hero h1,
+.fh-hero .lia-h1,
+.fh-hero h2,
+.fh-hero .lia-h2,
+.fh-hero h3,
+.fh-hero .lia-h3 {
+  margin-top: 0 !important;
 }
 
 

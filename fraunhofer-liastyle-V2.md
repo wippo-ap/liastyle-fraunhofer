@@ -230,7 +230,9 @@ Für Linkziele immer `<a>` beziehungsweise den Markdown-Link verwenden. `.fh-but
 
 **Zweck:** Eine Einleitung mit besonders hervorgehobenem Haupttitel gestalten.
 
-**Darstellung:** Grauer Hintergrund wie die Seite, zusätzlicher vertikaler Abstand und größere H1-Schrift. Ein Bild oder eine besondere Spaltenanordnung ist nicht enthalten.
+**Darstellung:** Grauer Hintergrund wie die Seite, zusätzlicher vertikaler Abstand und ein schwarzer Strich unter H1, H2 oder H3. Die H1 ist genauso groß wie eine normale Markdown-H1; H2 und H3 sind entsprechend kleiner. Das gilt auch auf kleinen Bildschirmen. Ein Bild oder eine besondere Spaltenanordnung ist nicht enthalten.
+
+**Hero mit H1:**
 
 ```markdown
 <div class="fh-hero">
@@ -241,7 +243,29 @@ Entdecke die Grundlagen und erprobe sie an einer konkreten Aufgabe.
 </div>
 ```
 
-Der Container ergänzt den bereits vorhandenen Kursabschnitt. Verwende ihn gezielt auf einer Start- oder Übersichtsseite und vermeide einen doppelten sichtbaren Haupttitel. Das HTML-`<h1>` im Beispiel wird von `.fh-hero h1` gestaltet und erhält den allgemeinen schwarzen H1-Balken.
+**Hero mit H2:**
+
+```markdown
+<div class="fh-hero">
+<h2>Wissen in die Praxis übertragen</h2>
+
+Entdecke die Grundlagen und erprobe sie an einer konkreten Aufgabe.
+
+</div>
+```
+
+**Hero mit H3:**
+
+```markdown
+<div class="fh-hero">
+<h3>Wissen in die Praxis übertragen</h3>
+
+Entdecke die Grundlagen und erprobe sie an einer konkreten Aufgabe.
+
+</div>
+```
+
+Der Container ergänzt den bereits vorhandenen Kursabschnitt. Wähle H1, H2 oder H3 passend zur Gliederung und vermeide einen doppelten sichtbaren Haupttitel. Alle drei Varianten verwenden die allgemeinen Schriftgrößen der jeweiligen Markdown-Überschrift und erhalten denselben schwarzen Strich.
 
 ### 5.8 Einfache Inhaltskarte: `.fh-card`
 
@@ -280,7 +304,7 @@ Die Karte ist kein Link. Für eine komplett anklickbare Karte `.fh-tile` verwend
 | `fh-box-soft` | Eigenständige Variante | Sanfte grüne Infobox |
 | `fh-note` | Eigenständiger Baustein | Neutraler Hinweisrahmen |
 | `fh-button` | Gestaltungsklasse | Vorzugsweise an Links |
-| `fh-hero` | Layoutcontainer | Einleitung mit größerer H1 |
+| `fh-hero` | Layoutcontainer | Einleitung mit H1, H2 oder H3 und Strich darunter |
 | `fh-card` | Eigenständiger Baustein | Nicht klickbare Inhaltskarte |
 
 Die CSS-Variablen `--fh-*` sind Designwerte und keine Autorenklassen. Auch `:hover`, `[open]`, `::before` und `::after` sind Zustände beziehungsweise CSS-Pseudoelemente; sie werden nicht als Klassen eingetragen.
