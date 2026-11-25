@@ -611,7 +611,7 @@ pre code {
   font-weight: 700 !important;
 }
 
-input,
+input:not(.lia-radio),
 textarea,
 select,
 .lia-input {
